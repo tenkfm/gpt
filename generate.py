@@ -1,6 +1,7 @@
 import os
 
 # Specify the directory containing images
+images_url = "https://tenkfm.github.io/gpt/images/"
 image_folder = './images'
 output_html = 'index.html'
 
@@ -36,13 +37,12 @@ html_content = '''
     </style>
 </head>
 <body>
-    <h1>Image Gallery</h1>
     <div class="gallery">
 '''
 
 # Loop through all images and add them to the HTML content
 for image in images:
-    img_path = os.path.join(image_folder, image)
+    img_path = os.path.join(images_url, image)
     html_content += f'        <img src="{img_path}" alt="{image}">\n'
 
 # Close the HTML tags
